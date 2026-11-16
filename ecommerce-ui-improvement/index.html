@@ -1,1 +1,316 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thẻ sản phẩm mới – The Craft House</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+<!-- Hình minh họa sản phẩm vẽ bằng SVG (thay cho ảnh thật) -->
+<svg class="svg-sprite" width="0" height="0" aria-hidden="true">
+  <defs>
+    <pattern id="chk-walnut" width="32" height="32" patternUnits="userSpaceOnUse">
+      <rect width="32" height="32" fill="#E9CFA4"/><rect width="16" height="16" fill="#6B4226"/><rect x="16" y="16" width="16" height="16" fill="#6B4226"/>
+    </pattern>
+    <pattern id="chk-regal" width="32" height="32" patternUnits="userSpaceOnUse">
+      <rect width="32" height="32" fill="#F4EBDD"/><rect width="16" height="16" fill="#2B2B2B"/><rect x="16" y="16" width="16" height="16" fill="#2B2B2B"/>
+    </pattern>
+    <pattern id="chk-mono" width="32" height="32" patternUnits="userSpaceOnUse">
+      <rect width="32" height="32" fill="#FFFFFF"/><rect width="16" height="16" fill="#1A1A1A"/><rect x="16" y="16" width="16" height="16" fill="#1A1A1A"/>
+    </pattern>
+    <symbol id="pawn" viewBox="0 0 20 30">
+      <circle cx="10" cy="7" r="5"/><path d="M6 12h8l2 12H4z"/><rect x="2" y="24" width="16" height="5" rx="2"/>
+    </symbol>
+  </defs>
+
+  <!-- Cờ tướng -->
+  <symbol id="art-xiangqi" viewBox="0 0 200 200">
+    <rect x="28" y="30" width="144" height="140" rx="6" fill="#8A5A3C"/>
+    <g stroke="#E9CFA4" stroke-width="1.5" fill="none">
+      <rect x="40" y="42" width="120" height="116"/>
+      <path d="M55 42v52M70 42v52M85 42v52M100 42v52M115 42v52M130 42v52M145 42v52M55 106v52M70 106v52M85 106v52M100 106v52M115 106v52M130 106v52M145 106v52"/>
+      <path d="M40 55h120M40 68h120M40 81h120M40 94h120M40 106h120M40 119h120M40 132h120M40 145h120"/>
+    </g>
+    <g stroke-width="2.5">
+      <circle cx="70" cy="68" r="9" fill="#F7EBD8" stroke="#B3261E"/><circle cx="100" cy="55" r="9" fill="#F7EBD8" stroke="#B3261E"/>
+      <circle cx="130" cy="81" r="9" fill="#F7EBD8" stroke="#B3261E"/><circle cx="85" cy="132" r="9" fill="#F7EBD8" stroke="#24201C"/>
+      <circle cx="115" cy="145" r="9" fill="#F7EBD8" stroke="#24201C"/><circle cx="145" cy="119" r="9" fill="#F7EBD8" stroke="#24201C"/>
+    </g>
+  </symbol>
+
+  <!-- Cờ vua (3 phiên bản màu) -->
+  <symbol id="art-chess-walnut" viewBox="0 0 200 200">
+    <rect x="34" y="40" width="132" height="132" rx="4" fill="#4A2E1A"/>
+    <rect x="40" y="46" width="120" height="120" fill="url(#chk-walnut)"/>
+    <use href="#pawn" x="56" y="20" width="20" height="30" fill="#F4E4C8"/>
+    <use href="#pawn" x="90" y="16" width="22" height="33" fill="#2A1A10"/>
+    <use href="#pawn" x="124" y="22" width="20" height="30" fill="#F4E4C8"/>
+  </symbol>
+  <symbol id="art-chess-regal" viewBox="0 0 200 200">
+    <rect x="34" y="40" width="132" height="132" rx="4" fill="#C9A86A"/>
+    <rect x="40" y="46" width="120" height="120" fill="url(#chk-regal)"/>
+    <use href="#pawn" x="60" y="18" width="20" height="30" fill="#1E1E1E"/>
+    <use href="#pawn" x="92" y="14" width="22" height="33" fill="#F4EBDD" stroke="#1E1E1E" stroke-width="1"/>
+    <use href="#pawn" x="124" y="18" width="20" height="30" fill="#1E1E1E"/>
+  </symbol>
+  <symbol id="art-chess-mono" viewBox="0 0 200 200">
+    <rect x="34" y="40" width="132" height="132" rx="2" fill="#1A1A1A"/>
+    <rect x="40" y="46" width="120" height="120" fill="url(#chk-mono)"/>
+    <use href="#pawn" x="62" y="18" width="20" height="30" fill="#E8E8E8" stroke="#1A1A1A" stroke-width="1"/>
+    <use href="#pawn" x="118" y="18" width="20" height="30" fill="#1A1A1A"/>
+  </symbol>
+
+  <!-- Bàn cờ tròn kiểu đảo -->
+  <symbol id="art-island" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="76" fill="#FFFFFF"/>
+    <circle cx="100" cy="100" r="64" fill="none" stroke="#F2C14E" stroke-width="16" stroke-dasharray="16 48"/>
+    <circle cx="100" cy="100" r="64" fill="none" stroke="#E2574C" stroke-width="16" stroke-dasharray="16 48" stroke-dashoffset="22"/>
+    <circle cx="100" cy="100" r="64" fill="none" stroke="#3B82C4" stroke-width="16" stroke-dasharray="16 48" stroke-dashoffset="44"/>
+    <circle cx="100" cy="100" r="50" fill="#CFE8F3"/>
+    <circle cx="100" cy="100" r="42" fill="#E3F2F8"/>
+    <path d="M78 92c4-12 22-14 28-4 4 7-4 14-14 14s-17-3-14-10z" fill="#5FAF8A"/>
+    <path d="M104 116c6-8 20-6 22 2 1 6-8 9-14 8s-10-5-8-10z" fill="#E8A35C"/>
+    <path d="M112 84l4-10 4 10z" fill="#E2574C"/>
+  </symbol>
+
+  <!-- Bàn cờ tỷ phú vuông -->
+  <symbol id="art-square-board" viewBox="0 0 200 200">
+    <rect x="34" y="34" width="132" height="132" rx="4" fill="#FFFFFF" stroke="#D9CFC2"/>
+    <g stroke-width="16" stroke-dasharray="12 4">
+      <path d="M42 42h116" stroke="#E2574C"/><path d="M158 42v116" stroke="#3B82C4"/>
+      <path d="M158 158H42" stroke="#F2C14E"/><path d="M42 158V42" stroke="#5FAF8A"/>
+    </g>
+    <rect x="56" y="56" width="88" height="88" fill="#F3EEE6"/>
+    <g stroke="#C9B8A4" stroke-width="2" fill="none">
+      <path d="M60 120c20-6 30-30 52-34s28-10 30-26"/><path d="M64 70h70M74 60v80M110 92v48"/>
+    </g>
+    <circle cx="96" cy="100" r="5" fill="#E2574C"/>
+  </symbol>
+
+  <!-- Cờ cá ngựa -->
+  <symbol id="art-ludo" viewBox="0 0 200 200">
+    <rect x="34" y="34" width="132" height="132" rx="6" fill="#FFFFFF" stroke="#D9CFC2"/>
+    <rect x="38" y="38" width="50" height="50" rx="4" fill="#C0392B"/><rect x="112" y="38" width="50" height="50" rx="4" fill="#2E86C1"/>
+    <rect x="38" y="112" width="50" height="50" rx="4" fill="#27AE60"/><rect x="112" y="112" width="50" height="50" rx="4" fill="#D4A017"/>
+    <path d="M88 88h24v24H88z" fill="#24201C"/>
+    <g fill="#FFFFFF" opacity=".9">
+      <circle cx="56" cy="56" r="6"/><circle cx="70" cy="70" r="6"/><circle cx="130" cy="56" r="6"/><circle cx="144" cy="70" r="6"/>
+      <circle cx="56" cy="130" r="6"/><circle cx="70" cy="144" r="6"/><circle cx="130" cy="130" r="6"/><circle cx="144" cy="144" r="6"/>
+    </g>
+  </symbol>
+
+  <!-- Bộ bài -->
+  <symbol id="art-cards" viewBox="0 0 200 200">
+    <g transform="rotate(-12 100 110)">
+      <rect x="58" y="48" width="74" height="104" rx="8" fill="#2F4F3E"/>
+      <rect x="64" y="54" width="62" height="92" rx="5" fill="none" stroke="#D9C38A" stroke-width="1.5"/>
+      <circle cx="95" cy="100" r="16" fill="none" stroke="#D9C38A" stroke-width="1.5"/>
+    </g>
+    <g transform="rotate(10 100 110)">
+      <rect x="72" y="50" width="74" height="104" rx="8" fill="#FFFFFF" stroke="#D9CFC2"/>
+      <path d="M109 88l12 14-12 14-12-14z" fill="#C0392B"/>
+      <text x="80" y="68" font-size="14" font-weight="700" fill="#C0392B" font-family="Georgia, serif">A</text>
+    </g>
+  </symbol>
+</svg>
+
+<div class="announce">Miễn phí vận chuyển cho hóa đơn từ 500.000₫</div>
+
+<header class="site-header">
+  <a class="wordmark" href="#">The Craft <span>House</span></a>
+  <a class="cart-link" href="#" aria-label="Giỏ hàng">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+    Giỏ hàng
+  </a>
+</header>
+
+<main>
+  <div class="section-head">
+    <div>
+      <h1>Board games bán chạy</h1>
+      <p>Bộ cờ thủ công làm quà cho gia đình, bạn bè và đối tác.</p>
+    </div>
+    <a class="see-all" href="#">Xem tất cả board games</a>
+  </div>
+
+  <div class="grid">
+
+    <article class="card">
+      <a class="card-media tile-xiangqi" href="#" aria-label="Xem Cờ Tướng Gỗ Walnut">
+        <span class="badge">Bán chạy</span>
+        <svg aria-hidden="true"><use href="#art-xiangqi"/></svg>
+      </a>
+      <div class="card-body">
+        <p class="card-cat">Bộ cờ</p>
+        <h3 class="card-title"><a href="#">Cờ Tướng Gỗ Walnut – Chinese Chess</a></h3>
+        <p class="card-price">4.630.000₫</p>
+        <p class="card-ship"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Miễn phí giao hàng</p>
+        <button class="card-btn" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          Thêm vào giỏ
+        </button>
+      </div>
+    </article>
+
+    <article class="card">
+      <a class="card-media tile-luxury" href="#" aria-label="Xem Cờ Vua Luxury">
+        <span class="badge">Bán chạy</span>
+        <svg aria-hidden="true"><use href="#art-chess-walnut"/></svg>
+      </a>
+      <div class="card-body">
+        <p class="card-cat">Bộ cờ</p>
+        <h3 class="card-title"><a href="#">Cờ Vua Luxury</a></h3>
+        <p class="card-price">4.907.000₫</p>
+        <p class="card-ship"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Miễn phí giao hàng</p>
+        <button class="card-btn" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          Thêm vào giỏ
+        </button>
+      </div>
+    </article>
+
+    <article class="card">
+      <a class="card-media tile-regal" href="#" aria-label="Xem Cờ Vua Regal">
+        <span class="badge">Bán chạy</span>
+        <svg aria-hidden="true"><use href="#art-chess-regal"/></svg>
+      </a>
+      <div class="card-body">
+        <p class="card-cat">Bộ cờ</p>
+        <h3 class="card-title"><a href="#">Cờ Vua Regal</a></h3>
+        <p class="card-price">7.398.000₫</p>
+        <p class="card-ship"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Miễn phí giao hàng</p>
+        <button class="card-btn" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          Thêm vào giỏ
+        </button>
+      </div>
+    </article>
+
+    <article class="card">
+      <a class="card-media tile-mono" href="#" aria-label="Xem Cờ Vua Lumina Monochrome">
+        <span class="badge">Bán chạy</span>
+        <svg aria-hidden="true"><use href="#art-chess-mono"/></svg>
+      </a>
+      <div class="card-body">
+        <p class="card-cat">Bộ cờ</p>
+        <h3 class="card-title"><a href="#">Cờ Vua Lumina Monochrome</a></h3>
+        <p class="card-price">2.744.280₫</p>
+        <p class="card-ship"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Miễn phí giao hàng</p>
+        <button class="card-btn" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          Thêm vào giỏ
+        </button>
+      </div>
+    </article>
+
+    <article class="card">
+      <a class="card-media tile-sea" href="#" aria-label="Xem Cờ Tỷ Phú Islandopoly">
+        <svg aria-hidden="true"><use href="#art-island"/></svg>
+      </a>
+      <div class="card-body">
+        <p class="card-cat">Cờ tỷ phú</p>
+        <h3 class="card-title"><a href="#">Cờ Tỷ Phú Islandopoly</a></h3>
+        <p class="card-price">5.100.000₫</p>
+        <p class="card-ship"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Miễn phí giao hàng</p>
+        <button class="card-btn" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          Thêm vào giỏ
+        </button>
+      </div>
+    </article>
+
+    <article class="card">
+      <a class="card-media tile-sand" href="#" aria-label="Xem Cờ Tỷ Phú Sài Gòn Lumina">
+        <svg aria-hidden="true"><use href="#art-square-board"/></svg>
+      </a>
+      <div class="card-body">
+        <p class="card-cat">Cờ tỷ phú</p>
+        <h3 class="card-title"><a href="#">Cờ Tỷ Phú Sài Gòn Lumina</a></h3>
+        <p class="card-price">2.350.000₫</p>
+        <p class="card-ship"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Miễn phí giao hàng</p>
+        <button class="card-btn" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          Thêm vào giỏ
+        </button>
+      </div>
+    </article>
+
+    <article class="card">
+      <a class="card-media tile-ludo" href="#" aria-label="Xem Cờ Cá Ngựa Thành Troy">
+        <svg aria-hidden="true"><use href="#art-ludo"/></svg>
+      </a>
+      <div class="card-body">
+        <p class="card-cat">Cờ cá ngựa</p>
+        <h3 class="card-title"><a href="#">Cờ Cá Ngựa Thành Troy</a></h3>
+        <p class="card-price">4.230.000₫</p>
+        <p class="card-ship"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Miễn phí giao hàng</p>
+        <button class="card-btn" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          Thêm vào giỏ
+        </button>
+      </div>
+    </article>
+
+    <article class="card">
+      <a class="card-media tile-green" href="#" aria-label="Xem Bài Tây Animal Kingdom">
+        <svg aria-hidden="true"><use href="#art-cards"/></svg>
+      </a>
+      <div class="card-body">
+        <p class="card-cat">Bài tây</p>
+        <h3 class="card-title"><a href="#">Bài Tây Animal Kingdom</a></h3>
+        <p class="card-price">293.000₫</p>
+        <p class="card-ship is-empty">Freeship từ 500.000₫</p>
+        <button class="card-btn" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          Thêm vào giỏ
+        </button>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- So sánh thẻ cũ và thẻ mới -->
+  <section class="compare" aria-labelledby="compare-title">
+    <div class="section-head">
+      <div>
+        <h2 id="compare-title">Thẻ cũ và thẻ mới</h2>
+        <p>Cùng một sản phẩm, trình bày theo cách hiện tại và theo đề xuất.</p>
+      </div>
+    </div>
+
+    <div class="compare-grid">
+      <div>
+        <p class="compare-label">Hiện tại</p>
+        <div class="old-card">
+          <div class="card-media tile-sea"><svg aria-hidden="true"><use href="#art-island"/></svg></div>
+          <h3>Cờ Tỷ Phú Islandopoly</h3>
+          <p>5.100.000₫</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="compare-label">Đề xuất</p>
+        <article class="card">
+          <a class="card-media tile-sea" href="#" aria-label="Xem Cờ Tỷ Phú Islandopoly">
+            <svg aria-hidden="true"><use href="#art-island"/></svg>
+          </a>
+          <div class="card-body">
+            <p class="card-cat">Cờ tỷ phú</p>
+            <h3 class="card-title"><a href="#">Cờ Tỷ Phú Islandopoly</a></h3>
+            <p class="card-price">5.100.000₫</p>
+            <p class="card-ship"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Miễn phí giao hàng</p>
+            <button class="card-btn" type="button">Thêm vào giỏ</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>
