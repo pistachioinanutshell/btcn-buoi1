@@ -1,1 +1,202 @@
+/* The Craft House – Thẻ sản phẩm mới */
 
+/* ---------- Màu sắc (sáng / tối) ---------- */
+:root {
+  --page: #F7F2EC;
+  --surface: #FFFFFF;
+  --ink: #24201C;
+  --muted: #6B635B;
+  --line: #E7DED3;
+  --brand: #EE5A24;          /* cam thương hiệu, dùng cho trang trí */
+  --brand-strong: #C2410C;   /* cam đậm, đủ tương phản cho chữ và nút */
+  --brand-hover: #A3360A;
+  --on-brand: #FFFFFF;
+  --ok: #2E7D4F;
+  --badge-bg: #24201C;
+  --badge-ink: #F7F2EC;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #1C1916; --surface: #27231F; --ink: #F3EDE6; --muted: #B3A99E;
+    --line: #3A342E; --brand: #F26B38; --brand-strong: #E8622F; --brand-hover: #F58457;
+    --on-brand: #1C1916; --ok: #6CC08F; --badge-bg: #F3EDE6; --badge-ink: #1C1916;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #1C1916; --surface: #27231F; --ink: #F3EDE6; --muted: #B3A99E;
+  --line: #3A342E; --brand: #F26B38; --brand-strong: #E8622F; --brand-hover: #F58457;
+  --on-brand: #1C1916; --ok: #6CC08F; --badge-bg: #F3EDE6; --badge-ink: #1C1916;
+  color-scheme: dark;
+}
+
+/* ---------- Nền tảng ---------- */
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+*, *::before, *::after { box-sizing: inherit; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: "Be Vietnam Pro", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+img, svg { max-width: 100%; }
+:focus-visible { outline: 2px solid var(--brand-strong); outline-offset: 3px; border-radius: 4px; }
+
+.announce {
+  background: var(--brand);
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 16px;
+}
+.site-header {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1240px; margin: 0 auto; padding: 18px 20px;
+  border-bottom: 1px solid var(--line);
+}
+.wordmark { font-weight: 700; font-size: 18px; text-decoration: none; letter-spacing: -0.01em; }
+.wordmark span { color: var(--brand-strong); }
+.cart-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; text-decoration: none; }
+
+main { max-width: 1240px; margin: 0 auto; padding: 40px 20px 72px; }
+
+.section-head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap; margin-bottom: 24px;
+}
+.section-head h1, .section-head h2 {
+  margin: 0; font-size: clamp(24px, 3.2vw, 34px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.2;
+}
+.section-head p { margin: 6px 0 0; color: var(--muted); font-size: 15px; max-width: 56ch; }
+.see-all {
+  font-size: 14px; font-weight: 600; color: var(--brand-strong);
+  text-decoration: none; border-bottom: 1.5px solid currentColor; padding-bottom: 1px;
+}
+.see-all:hover { color: var(--brand-hover); }
+
+/* ---------- Lưới sản phẩm ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+@media (max-width: 1000px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 680px)  { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } }
+
+/* ---------- Thẻ sản phẩm ---------- */
+.card {
+  display: flex; flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color .2s ease;
+}
+.card:hover { border-color: var(--brand); }
+
+.card-media {
+  position: relative; display: block;
+  aspect-ratio: 1 / 1;
+  background: var(--tile, #EFE6DA);
+  overflow: hidden;
+}
+.card-media svg {
+  width: 100%; height: 100%; display: block;
+  transition: transform .35s ease;
+}
+.card:hover .card-media svg { transform: scale(1.04); }
+
+.badge {
+  position: absolute; top: 10px; left: 10px; z-index: 1;
+  background: var(--badge-bg); color: var(--badge-ink);
+  font-size: 12px; font-weight: 600; line-height: 1;
+  padding: 6px 9px; border-radius: 999px;
+}
+
+.card-body {
+  display: flex; flex-direction: column; flex: 1;
+  padding: 14px 16px 16px;
+}
+.card-cat { margin: 0 0 4px; font-size: 12.5px; color: var(--muted); font-weight: 500; }
+.card-title {
+  margin: 0; font-size: 15.5px; font-weight: 600; line-height: 1.35;
+  /* Giới hạn 2 dòng và giữ chiều cao cố định để giá luôn thẳng hàng */
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  min-height: calc(1.35em * 2);
+}
+.card-title a { text-decoration: none; }
+.card-title a:hover { color: var(--brand-strong); }
+
+.card-price {
+  margin: 10px 0 2px; font-size: 18px; font-weight: 700;
+  color: var(--brand-strong); font-variant-numeric: tabular-nums; letter-spacing: -0.01em;
+}
+.card-ship {
+  display: flex; align-items: center; gap: 6px;
+  margin: 0 0 14px; font-size: 12.5px; color: var(--ok); font-weight: 500; min-height: 19px;
+}
+.card-ship.is-empty { color: var(--muted); font-weight: 400; }
+
+.card-btn {
+  margin-top: auto;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; min-height: 44px;
+  border: 0; border-radius: 10px;
+  background: var(--brand-strong); color: var(--on-brand);
+  font: inherit; font-size: 14.5px; font-weight: 600;
+  cursor: pointer;
+  transition: background-color .15s ease;
+}
+.card-btn:hover { background: var(--brand-hover); }
+.card-btn:active { transform: translateY(1px); }
+
+@media (max-width: 680px) {
+  .card-body { padding: 12px 12px 12px; }
+  .card-title { font-size: 14px; }
+  .card-price { font-size: 16px; }
+  .card-btn { font-size: 13.5px; min-height: 42px; }
+  .card-ship { font-size: 12px; }
+}
+
+/* ---------- So sánh trước / sau ---------- */
+.compare { margin-top: 72px; padding-top: 40px; border-top: 1px solid var(--line); }
+.compare-grid {
+  display: grid; grid-template-columns: 240px 240px; gap: 28px; align-items: start;
+}
+@media (max-width: 560px) { .compare-grid { grid-template-columns: 1fr 1fr; gap: 16px; } }
+@media (max-width: 480px) { .compare-grid { grid-template-columns: 1fr; } }
+.compare-label { margin: 0 0 10px; font-size: 14px; font-weight: 600; color: var(--muted); }
+
+.old-card .card-media { border-radius: 4px; }
+.old-card h3 { margin: 12px 0 2px; font-size: 13px; font-weight: 700; line-height: 1.4; }
+.old-card p { margin: 0; font-size: 13px; color: var(--brand); }
+
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+  .card:hover .card-media svg { transform: none; }
+}
+
+/* ---------- Màu nền ảnh của từng thẻ ---------- */
+.tile-xiangqi { --tile: #EFE3D2; }
+.tile-luxury { --tile: #EADCC8; }
+.tile-regal { --tile: #E6E0D6; }
+.tile-mono { --tile: #E4E4E2; }
+.tile-sea { --tile: #DCEEF4; }
+.tile-sand { --tile: #F3E7D6; }
+.tile-ludo { --tile: #EDE4D7; }
+.tile-green { --tile: #E3ECE5; }
+
+/* ---------- Kho hình SVG ẩn ---------- */
+.svg-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
